@@ -1,0 +1,9 @@
+com\web\BrowserManager.class
+com\config\Config.class
+com\exception\AutoFWException.class
+com\api\RestService.class
+com\testdata\TestDataOperations.class
+com\utility\Util.class
+com\web\WebElementManager.class
+com\exception\AutoFWConfigException.class
+com\testdata\CorporateSignUpTestData.class
