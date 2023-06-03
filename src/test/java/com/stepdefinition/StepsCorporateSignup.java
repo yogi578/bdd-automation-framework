@@ -22,9 +22,10 @@ import lombok.extern.log4j.Log4j2;
 
 public class StepsCorporateSignup {
 
-	CorporateSignUpTestData corporateData;
+	
 	WebDriver driver;
 	CorporateSignUpPage corporateSignUpPage;
+	CorporateSignUpTestData corporateData;
 
 	public StepsCorporateSignup() throws AutoFWConfigException {
 		driver = Util.getDriver();
@@ -39,11 +40,11 @@ public class StepsCorporateSignup {
 
 	// hit url
 	@Given("User hits url {string}")
-	public void userHitsUrl(String string) {
+	public void userHitsUrl(String url) {
 		
-		driver.get(string);
-		WebElementManager wem=new WebElementManager(driver);
-		wem.pause(5);
+		corporateSignUpPage.getCorporateDetailsPage(url);
+		//WebElementManager wem=new WebElementManager(driver);
+		
 
 	}
 

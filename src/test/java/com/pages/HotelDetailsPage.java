@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import com.exception.AutoFWConfigException;
 import com.exception.AutoFWException;
 import com.web.BrowserManager;
-
+import com.web.TabManager;
 import com.web.WebElementManager;
 
 import lombok.extern.log4j.Log4j2;
@@ -116,7 +116,7 @@ public class HotelDetailsPage {
 		
 			   
 			   wem.pause(5);
-			   BrowserManager.switchToNewTab(driver);
+			   TabManager.switchToNewTab(driver);
 		   		
 		   }catch(NoSuchElementException e) {
 			   throw new AutoFWException("Hotel name does not exist in the search list!");

@@ -60,6 +60,11 @@ public class CorporateSignUpPage {
 				wem=new WebElementManager(driver);
 			}
 		   
+		   public void getCorporateDetailsPage(String url) {
+			   driver.get(url);
+			   wem.pause(5);
+		   }
+		   
 		   public void enterCompanyName(String companyNameValue) {
 			   
 			   WebElement cmpName= driver.findElement(companyName);

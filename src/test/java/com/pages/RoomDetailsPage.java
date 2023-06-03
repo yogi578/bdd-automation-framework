@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import com.stepdefinition.StepsHotelDetailsPage;
 import com.web.BrowserManager;
+import com.web.TabManager;
 import com.web.WebElementManager;
 
 import lombok.extern.log4j.Log4j2;
@@ -65,7 +66,7 @@ public class RoomDetailsPage {
 				wem.waitforElementToBeclickable(Duration.ofSeconds(5), bookButtonDesiredRoom);
 				bookButtonDesiredRoom.click();
 				wem.pause(5);
-				BrowserManager.switchToNewTab(driver);
+				TabManager.switchToNewTab(driver);
 	}
 	
 

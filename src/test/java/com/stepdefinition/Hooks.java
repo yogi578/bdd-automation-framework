@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.pages.HotelSearchPage;
 import com.utility.Util;
 import com.web.BrowserManager;
+import com.web.TabManager;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -29,13 +30,12 @@ public class Hooks {
 	
 	static WebDriver driver;
 	
+	
 	// Step to be performed before test scenario
 	@Before
 	public static void initialSetup(Scenario scenario) throws AutoFWConfigException {
 		driver=Util.getDriver();
 		log.info("");
-		log.info("");
-		
 		log.info("-----------------------------------------------------------------------------------------------");
 		log.info("------------- Excution started for scenario:"+ scenario.getName()+" -------------");
 		
@@ -53,13 +53,15 @@ public class Hooks {
 
             log.error("------------- Excution failed for scenario:"+ scenario.getName()+" -------------");
         	log.error("-----------------------------------------------------------------------------------------------");
-        	BrowserManager.exit();
+        
+    		//TabManager.switchToDefaultTab(driver);
         }   
          
         log.info("------------- Excution completed for scenario:"+ scenario.getName()+"-------------");
     	log.info("-----------------------------------------------------------------------------------------------");
     	log.info("");
 		log.info("");
-        BrowserManager.exit();
+		TabManager.switchToDefaultTab(driver);
+		
 	}
 }

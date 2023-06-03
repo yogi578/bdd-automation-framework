@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 
 import com.web.BrowserManager;
+import com.web.TabManager;
 import com.web.WebElementManager;
 
 import lombok.extern.log4j.Log4j2;
@@ -47,7 +48,7 @@ public class BookingDetailsPage {
 			
 			String currentPageTitle= driver.getTitle();
 			log.info(".........Current page title :- "+ currentPageTitle);
-			Assert.assertEquals(currentPageTitle, "Online Hotel Booking | Book Luxury, Budget and Cheap Hotels","You are on booking page!");	
+			Assert.assertEquals(currentPageTitle, "Online Hotel Booking | Book Luxury, Budget and Cheap Hotels","Booking page title does not match!");	
 		}
 		
 		public void enterMobileNumber(String mobileNo) {
@@ -93,16 +94,18 @@ public class BookingDetailsPage {
 		public void continueToPay() {
 		WebElement continueButton=driver.findElement(continueToPay);
 		//wem.scrollToElement(continueButton);
+		wem.pause(2);
 		log.info(".........User clicked on continue to pay button!");
 		driver.findElement(continueToPay).click();
-		wem.pause(5);
-		 BrowserManager.switchToNewTab(driver);
+		wem.pause(2);
+		 TabManager.switchToNewTab(driver);
 	}
 		
 		public void validatePaymentPage() {
 			
 			String currentPageTitle= driver.getTitle();
 			log.info(".........Current page title :- "+ currentPageTitle);
-			Assert.assertEquals(currentPageTitle, "Cleartrip | Pay securely","Payment page tile matched!");	
+			Assert.assertEquals(currentPageTitle, "Cleartrip | Pay securely","Payment page title does not matched!");	
+			wem.pause(10);
 		}
 }
